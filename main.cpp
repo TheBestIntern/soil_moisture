@@ -1,12 +1,11 @@
-#include <vector>
 #include <iomanip> 
 #include <sstream>
-#include <string.h>
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-
+// initialize structs
 struct plant{
     std::string name;
     int ageInDays = 0;
@@ -15,10 +14,12 @@ struct plant{
 
 int main() {
     
+    
     int choice = 0;
     int nameChoice = 0;
     bool exit = false;
-
+    
+    // make plant structs
     plant dandelion;
     dandelion.name = "dandelion";
     dandelion.ageInDays = 27;
@@ -31,8 +32,16 @@ int main() {
     monstera.name = "monstera";
     monstera.ageInDays = 87    ;
     monstera.watered = false;
+    
+    // testing with io file things
+    ofstream myfile;
+    myfile.open("plantList.txt");
+    myfile << dandelion.name;
+    myfile.close();
+    // io file testing end
 
     do {
+        // print menu
         std::cout << "Hello, welcome to your plants, please select one of the following options:" << endl;
         std::cout << "1) View plants list" << endl;
         std::cout << "2) Print out struct code" << endl;
@@ -87,5 +96,6 @@ int main() {
         }
     } while (!exit);
 
+    
     return 0;
 }

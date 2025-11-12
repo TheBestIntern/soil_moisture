@@ -33,7 +33,7 @@ int main() {
     monstera.watered = false;
 
     do {
-        std::cout << "Hello, welcome to planty plants, please select one of the following options:" << endl;
+        std::cout << "Hello, welcome to your plants, please select one of the following options:" << endl;
         std::cout << "1) View plants list" << endl;
         std::cout << "2) Print out struct code" << endl;
         std::cout << "3) Exit" << endl;
@@ -42,30 +42,46 @@ int main() {
 
         switch (choice) {
             case 1: // view plants list
-                cout << "Please enter which plant you would like to view data of: ";
-                cout << "1) " + dandelion.name + "\n" + "2) " + orchid.name + "\n" + "3) " + monstera.name << endl;
-                cout << "4) Exit";
+                std::cout << "Please enter which plant you would like to view data of: " << endl;
+                std::cout << "1) " + dandelion.name + "\n" + "2) " + orchid.name + "\n" + "3) " + monstera.name << endl;
+                std::cout << "4) Exit" << endl;
                 cin >> nameChoice;
                 switch (nameChoice) {
                     case 1:
-                        cout << "dandelion age: " + dandelion.ageInDays << endl;
-                        cout << "watered? " + dandelion.watered << endl;
+                        std::cout << "Dandelion age: ";
+                        cout << dandelion.ageInDays << endl;
+                        if (dandelion.watered == 1) {
+                            cout << "Dandelion has been watered today!" << endl;
+                        } else {
+                            cout << "Dandelion has not been watered today:(" << endl;
+                        }
                         break;
                     case 2:
-                        cout << "orchid age: " + orchid.ageInDays << endl;
-                        cout << "watered? " + orchid.watered << endl;
+                        std::cout << "Orchid age: ";
+                        cout << orchid.ageInDays << endl; 
+                        if (orchid.watered == 1) {
+                            cout << "Orchid has been watered today!" << endl;
+                        } else {
+                            cout << "Orchid has not been watered today:(" << endl;
+                        }
                         break;
                     case 3:
-                        cout << "monstera age: " + monstera.ageInDays << endl;
-                        cout << "watered? " + monstera.watered << endl;
+                       std::cout << "Monstera age: ";
+                        cout << monstera.ageInDays << endl; 
+                        if (monstera.watered == 1) {
+                            cout << "Monstera has been watered today!" << endl;
+                        } else {
+                            cout << "Monstera has not been watered today:(" << endl;
+                        }
                         break;
                 }
+                break;
             case 2:
-                cout << "print struct code here" << endl;
+                std::cout << "print struct code here" << endl;
                 break;
 
             case 3: // exit
-                cout << "Goodbye! Thank you for checking in on the plants:)" << endl;
+                std::cout << "Goodbye! Thank you for checking in on the plants:)" << endl;
                 exit = true;
                 break;
         }
